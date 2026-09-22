@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paulene | DHT11 Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-line"></div>
+
+<main class="wrapper">
+
+    <header class="header">
+        <div class="brand">Paulene Consular</div>
+        <div class="status">
+            <span id="statusDot" class="status-dot"></span>
+            <span id="statusText">CONNECTING</span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <p class="eyebrow">REALTIME SENSOR</p>
+        <h1>Environment<br>Monitor</h1>
+        <p class="subtitle">Live temperature and humidity data from the ESP32 DHT11 sensor.</p>
+    </section>
+
+    <section class="current-section">
+
+        <div class="sensor-card">
+            <p class="sensor-label">TEMPERATURE</p>
+            <div id="currentTemperature" class="sensor-value">-- °C</div>
+            <p class="sensor-note">DHT11</p>
+        </div>
+
+        <div class="sensor-card">
+            <p class="sensor-label">HUMIDITY</p>
+            <div id="currentHumidity" class="sensor-value">-- %</div>
+            <p class="sensor-note">DHT11</p>
+        </div>
+
+    </section>
+
+    <section class="graph-section">
+
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">TREND</p>
+                <h2>Sensor Graph</h2>
+            </div>
+
+            <div class="date-control">
+                <label for="graphDate">DATE</label>
+                <select id="graphDate">
+                    <option value="">Select Date</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="sensorChart"></canvas>
+        </div>
+
+    </section>
+
+    <section class="history-section">
+
+        <div class="section-heading history-heading">
+            <div>
+                <p class="eyebrow">DATABASE</p>
+                <h2>Sensor History</h2>
+            </div>
+
+            <button id="toggleHistory" class="outline-button">
+                SHOW HISTORY
+            </button>
+        </div>
+
+        <div id="historyContent" class="hidden">
+
+            <div class="history-controls">
+
+                <div class="date-control">
+                    <label for="historyDate">DATE</label>
+                    <select id="historyDate">
+                        <option value="">Select Date</option>
+                    </select>
+                </div>
+
+                <div class="record-total">
+                    <span>RECORDS</span>
+                    <strong id="recordCount">0</strong>
+                </div>
+
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>TIME</th>
+                            <th>TEMPERATURE</th>
+                            <th>HUMIDITY</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTableBody">
+                        <tr>
+                            <td colspan="3" class="empty">Waiting for records...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="wifi-section">
+        <p class="eyebrow">ESP32 CONFIGURATION</p>
+        <h2>WiFi Manager</h2>
+        <p>Configure the WiFi connection of the Paulene ESP32 monitor.</p>
+        <a href="/change-wifi" class="outline-button">CHANGE WIFI</a>
+    </section>
+
+    <div id="message" class="message">System ready.</div>
+
+    <footer>
+        Paulene Consular
+    </footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
