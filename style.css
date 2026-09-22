@@ -1,0 +1,388 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #fffafa;
+    color: #3d3034;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.top-line {
+    width: 100%;
+    height: 5px;
+    background: #d98da8;
+}
+
+.wrapper {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 38px 0 50px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eadcdf;
+    padding-bottom: 20px;
+}
+
+.brand {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #b96786;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #75656a;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #999;
+    display: inline-block;
+}
+
+.hero {
+    padding: 65px 0 48px;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #c27b96;
+}
+
+h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 7vw, 72px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: #352b2f;
+}
+
+h2 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: 400;
+    color: #3b2e33;
+}
+
+.subtitle {
+    margin-top: 18px;
+    font-size: 15px;
+    color: #86767b;
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+/* CURRENT READINGS */
+
+.current-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    border-top: 1px solid #eadcdf;
+    border-bottom: 1px solid #eadcdf;
+    padding: 28px 0;
+}
+
+.sensor-card {
+    background: #ffffff;
+    border-top: 2px solid #d98da8;
+    padding: 28px;
+}
+
+.sensor-label {
+    margin: 0 0 15px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #987983;
+}
+
+.sensor-value {
+    font-family: Georgia, serif;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 400;
+    color: #b96786;
+}
+
+.sensor-note {
+    margin: 12px 0 0;
+    font-size: 11px;
+    color: #a18d94;
+}
+
+/* GRAPH */
+
+.graph-section {
+    padding-top: 60px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.date-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-control label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #987983;
+}
+
+select {
+    padding: 11px 13px;
+    border: 1px solid #dfcbd2;
+    background: #ffffff;
+    color: #3d3034;
+    font-size: 13px;
+    outline: none;
+}
+
+select:focus {
+    border-color: #d98da8;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    background: #ffffff;
+    border-top: 2px solid #d98da8;
+    padding: 18px;
+}
+
+/* HISTORY */
+
+.history-section {
+    padding-top: 60px;
+}
+
+.history-heading {
+    align-items: center;
+}
+
+.outline-button {
+    display: inline-block;
+    border: 1px solid #d98da8;
+    background: #d98da8;
+    color: white;
+    padding: 12px 19px;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.outline-button:hover {
+    background: #c77b98;
+    border-color: #c77b98;
+}
+
+.history-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 25px 0;
+    border-bottom: 1px solid #eadcdf;
+}
+
+.record-total {
+    text-align: right;
+}
+
+.record-total span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #a18d94;
+    margin-bottom: 4px;
+}
+
+.record-total strong {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #b96786;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: #ffffff;
+    border-top: 2px solid #d98da8;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+thead {
+    background: #fff5f8;
+}
+
+th {
+    padding: 15px 16px;
+    text-align: left;
+    font-size: 9px;
+    letter-spacing: 1.7px;
+    color: #9a7d87;
+    border-bottom: 1px solid #eadcdf;
+}
+
+td {
+    padding: 15px 16px;
+    font-size: 13px;
+    color: #55454b;
+    border-bottom: 1px solid #f0e5e8;
+}
+
+tbody tr:hover {
+    background: #fffafb;
+}
+
+.empty {
+    text-align: center;
+    color: #a8949a;
+    padding: 35px 15px;
+}
+
+/* WIFI */
+
+.wifi-section {
+    margin-top: 60px;
+    padding: 30px;
+    background: #ffffff;
+    border-top: 2px solid #d98da8;
+}
+
+.wifi-section h2 {
+    margin-bottom: 12px;
+}
+
+.wifi-section p:not(.eyebrow) {
+    color: #86767b;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+/* MESSAGE + FOOTER */
+
+.message {
+    margin-top: 24px;
+    min-height: 22px;
+    font-size: 12px;
+    color: #9a7c86;
+}
+
+footer {
+    margin-top: 70px;
+    padding-top: 20px;
+    border-top: 1px solid #eadcdf;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #ad999f;
+}
+
+.hidden {
+    display: none;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .wrapper {
+        width: 90%;
+        padding-top: 25px;
+    }
+
+    .hero {
+        padding: 45px 0 40px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .current-section {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .date-control {
+        width: 100%;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    .chart-container {
+        height: 350px;
+        padding: 10px;
+    }
+
+    .history-heading {
+        align-items: flex-start;
+    }
+
+    .history-controls {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .record-total {
+        text-align: left;
+    }
+
+    .wifi-section {
+        padding: 22px;
+    }
+}

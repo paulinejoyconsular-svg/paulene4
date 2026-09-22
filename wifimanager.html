@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paulene WiFi Manager</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #fffafa;
+            color: #3d3034;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .top-line {
+            height: 5px;
+            background: #d98da8;
+        }
+
+        .wrapper {
+            width: min(600px, 90%);
+            margin: 0 auto;
+            padding: 45px 0;
+        }
+
+        .brand {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #b96786;
+            margin-bottom: 50px;
+        }
+
+        .eyebrow {
+            margin: 0 0 10px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #c27b96;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: Georgia, serif;
+            font-size: 48px;
+            font-weight: 400;
+            color: #352b2f;
+        }
+
+        .subtitle {
+            margin: 15px 0 35px;
+            color: #86767b;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        form {
+            background: #ffffff;
+            border-top: 2px solid #d98da8;
+            padding: 28px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #987983;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 22px;
+            border: 1px solid #dfcbd2;
+            background: #fff;
+            outline: none;
+            font-size: 14px;
+            color: #3d3034;
+        }
+
+        input:focus {
+            border-color: #d98da8;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background: #d98da8;
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c77b98;
+        }
+
+        .note {
+            margin-top: 20px;
+            font-size: 11px;
+            color: #9a858c;
+            line-height: 1.6;
+        }
+
+        footer {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 1px solid #eadcdf;
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: #ad999f;
+        }
+
+        @media (max-width: 650px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .wrapper {
+                padding-top: 30px;
+            }
+
+            form {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="top-line"></div>
+
+<main class="wrapper">
+
+    <div class="brand">
+       PAULENE
+    </div>
+
+    <p class="eyebrow">
+        ESP32 CONFIGURATION
+    </p>
+
+    <h1>
+        WiFi Manager
+    </h1>
+
+    <p class="subtitle">
+        Configure the WiFi connection of the
+        Paulene ESP32 DHT11 monitor.
+    </p>
+
+    <form method="POST" action="/">
+
+        <label for="ssid">
+            WIFI SSID
+        </label>
+
+        <input
+            id="ssid"
+            name="ssid"
+            type="text"
+            placeholder="Enter WiFi name"
+            required
+        >
+
+        <label for="password">
+            WIFI PASSWORD
+        </label>
+
+        <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Enter WiFi password"
+            required
+        >
+
+        <label for="ip">
+            STATIC IP
+        </label>
+
+        <input
+            id="ip"
+            name="ip"
+            type="text"
+            placeholder="Leave blank for DHCP"
+        >
+
+        <label for="gateway">
+            GATEWAY
+        </label>
+
+        <input
+            id="gateway"
+            name="gateway"
+            type="text"
+            placeholder="Leave blank for DHCP"
+        >
+
+        <button type="submit">
+            SAVE & CONNECT
+        </button>
+
+    </form>
+
+    <p class="note">
+        For normal WiFi connection, leave
+        Static IP and Gateway blank.
+        The ESP32 will automatically request
+        an IP address from the router.
+    </p>
+
+    <footer>
+        Paulene
+    </footer>
+
+</main>
+
+</body>
+</html>
